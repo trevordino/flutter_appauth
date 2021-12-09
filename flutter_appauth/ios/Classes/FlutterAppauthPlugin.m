@@ -190,15 +190,28 @@ NSString *const END_SESSION_ERROR_MESSAGE_FORMAT = @"Failed to end session: %@";
 }
 
 - (void)performAuthorization:(OIDServiceConfiguration *)serviceConfiguration clientId:(NSString*)clientId clientSecret:(NSString*)clientSecret scopes:(NSArray *)scopes redirectUrl:(NSString*)redirectUrl additionalParameters:(NSDictionary *)additionalParameters preferEphemeralSession:(BOOL)preferEphemeralSession result:(FlutterResult)result exchangeCode:(BOOL)exchangeCode nonce:(NSString*)nonce{
+    // NSString *codeVerifier = [[OIDAuthorizationRequest alloc] init] generateCodeVerifier;
+    // NSString *codeChallenge = [[OIDAuthorizationRequest alloc] init] codeChallengeS256ForVerifier:codeVerifier];
     OIDAuthorizationRequest *request =
     [[OIDAuthorizationRequest alloc] initWithConfiguration:serviceConfiguration
-                                                  clientId:clientId
-                                              clientSecret:clientSecret
-                                                    scopes:scopes
-                                                     nonce:nonce
-                                               redirectURL:[NSURL URLWithString:redirectUrl]
-                                              responseType:OIDResponseTypeCode
-                                      additionalParameters:additionalParameters];
+                                                    clientId:clientID
+                                                clientSecret:clientSecret
+                                                       scope:[OIDScopeUtilities scopesWithArray:scopes]
+                                                 redirectURL:[NSURL URLWithString:redirectUrl]
+                                                responseType:OIDResponseTypeCode
+                                                    state:[[OIDAuthorizationRequest alloc] init] generateState
+                                                    nonce:nonce
+                                                codeVerifier:nil
+                                            codeChallenge:nil
+                                        codeChallengeMethod:nil
+                                        additionalParameters:additionalParameters
+    // [[OIDAuthorizationRequest alloc] initWithConfiguration:serviceConfiguration
+    //                                               clientId:clientId
+    //                                           clientSecret:clientSecret
+    //                                                 scopes:scopes
+    //                                            redirectURL:[NSURL URLWithString:redirectUrl]
+    //                                           responseType:OIDResponseTypeCode
+    //                                   additionalParameters:additionalParameters];
     UIViewController *rootViewController =
     [UIApplication sharedApplication].delegate.window.rootViewController;
     if(exchangeCode) {
