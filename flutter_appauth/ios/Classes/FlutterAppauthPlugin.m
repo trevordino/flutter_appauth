@@ -159,7 +159,7 @@ NSString *const END_SESSION_ERROR_MESSAGE_FORMAT = @"Failed to end session: %@";
     }
     if(requestParameters.serviceConfigurationParameters != nil) {
         OIDServiceConfiguration *serviceConfiguration = [self processServiceConfigurationParameters:requestParameters.serviceConfigurationParameters];
-        [self performAuthorization:serviceConfiguration clientId:requestParameters.clientId clientSecret:requestParameters.clientSecret scopes:requestParameters.scopes redirectUrl:requestParameters.redirectUrl additionalParameters:requestParameters.additionalParameters preferEphemeralSession:requestParameters.preferEphemeralSession result:result exchangeCode:exchangeCode];
+        [self performAuthorization:serviceConfiguration clientId:requestParameters.clientId clientSecret:requestParameters.clientSecret scopes:requestParameters.scopes redirectUrl:requestParameters.redirectUrl additionalParameters:requestParameters.additionalParameters preferEphemeralSession:requestParameters.preferEphemeralSession result:result exchangeCode:exchangeCode nonce:requestParameters.nonce];
     } else if (requestParameters.discoveryUrl) {
         NSURL *discoveryUrl = [NSURL URLWithString:requestParameters.discoveryUrl];
         [OIDAuthorizationService discoverServiceConfigurationForDiscoveryURL:discoveryUrl
