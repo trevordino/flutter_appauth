@@ -204,7 +204,7 @@ NSString *const END_SESSION_ERROR_MESSAGE_FORMAT = @"Failed to end session: %@";
                                                 codeVerifier:nil
                                             codeChallenge:nil
                                         codeChallengeMethod:nil
-                                        additionalParameters:additionalParameters;
+                                        additionalParameters:additionalParameters];
     // [[OIDAuthorizationRequest alloc] initWithConfiguration:serviceConfiguration
     //                                               clientId:clientId
     //                                           clientSecret:clientSecret
