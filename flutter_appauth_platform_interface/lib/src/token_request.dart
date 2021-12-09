@@ -17,6 +17,7 @@ class TokenRequest extends CommonRequestDetails {
     this.authorizationCode,
     this.codeVerifier,
     bool allowInsecureConnections = false,
+    this.nonce,
   }) {
     this.clientId = clientId;
     this.redirectUrl = redirectUrl;
@@ -45,4 +46,7 @@ class TokenRequest extends CommonRequestDetails {
 
   /// The code verifier to be sent with the authorization code. This should match the code verifier used when performing the authorization request
   final String? codeVerifier;
+
+  /// Nonce
+  final String? nonce;
 }

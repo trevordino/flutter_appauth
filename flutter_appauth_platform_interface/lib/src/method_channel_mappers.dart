@@ -74,6 +74,7 @@ Map<String, Object?> _convertTokenRequestToMap(TokenRequest tokenRequest) {
     'authorizationCode': tokenRequest.authorizationCode,
     'grantType': _inferGrantType(tokenRequest),
     'codeVerifier': tokenRequest.codeVerifier,
+    'nonce': tokenRequest.nonce,
   }..addAll(_convertCommonRequestDetailsToMap(tokenRequest));
 }
 

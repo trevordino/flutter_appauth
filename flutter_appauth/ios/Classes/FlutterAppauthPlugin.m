@@ -23,6 +23,7 @@
 @property(nonatomic, strong) NSString *refreshToken;
 @property(nonatomic, strong) NSString *codeVerifier;
 @property(nonatomic, strong) NSString *authorizationCode;
+@property(nonatomic, strong) NSString *nonce;
 @property(nonatomic, strong) NSArray *scopes;
 @property(nonatomic, strong) NSDictionary *serviceConfigurationParameters;
 @property(nonatomic, strong) NSDictionary *additionalParameters;
@@ -41,6 +42,7 @@
     _authorizationCode = [ArgumentProcessor processArgumentValue:arguments withKey:@"authorizationCode"];
     _codeVerifier = [ArgumentProcessor processArgumentValue:arguments withKey:@"codeVerifier"];
     _grantType = [ArgumentProcessor processArgumentValue:arguments withKey:@"grantType"];
+    _nonce = [ArgumentProcessor processArgumentValue:arguments withKey:@"nonce"];
     _scopes = [ArgumentProcessor processArgumentValue:arguments withKey:@"scopes"];
     _serviceConfigurationParameters = [ArgumentProcessor processArgumentValue:arguments withKey:@"serviceConfiguration"];
     _additionalParameters = [ArgumentProcessor processArgumentValue:arguments withKey:@"additionalParameters"];
@@ -358,6 +360,7 @@ NSString *const END_SESSION_ERROR_MESSAGE_FORMAT = @"Failed to end session: %@";
                                           clientID:requestParameters.clientId
                                       clientSecret:requestParameters.clientSecret
                                             scopes:requestParameters.scopes
+                                             nonce:requestParameters.nonce
                                       refreshToken:requestParameters.refreshToken
                                       codeVerifier:requestParameters.codeVerifier
                               additionalParameters:requestParameters.additionalParameters];
