@@ -195,6 +195,7 @@ NSString *const END_SESSION_ERROR_MESSAGE_FORMAT = @"Failed to end session: %@";
                                                   clientId:clientId
                                               clientSecret:clientSecret
                                                     scopes:scopes
+                                                     nonce:nonce
                                                redirectURL:[NSURL URLWithString:redirectUrl]
                                               responseType:OIDResponseTypeCode
                                       additionalParameters:additionalParameters];
