@@ -13,7 +13,7 @@ dependencies:
   flutter_appauth_platform_interface:
     git:
       url: git://github.com/trevordino/flutter_appauth.git
-      ref: 4da4654
+      ref: 1876bdd
       path: "flutter_appauth_platform_interface"
 
 flutter:
