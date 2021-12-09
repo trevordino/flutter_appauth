@@ -194,7 +194,7 @@ NSString *const END_SESSION_ERROR_MESSAGE_FORMAT = @"Failed to end session: %@";
     // NSString *codeChallenge = [[OIDAuthorizationRequest alloc] init] codeChallengeS256ForVerifier:codeVerifier];
     OIDAuthorizationRequest *request =
     [[OIDAuthorizationRequest alloc] initWithConfiguration:serviceConfiguration
-                                                    clientId:clientID
+                                                    clientId:clientId
                                                 clientSecret:clientSecret
                                                        scope:[OIDScopeUtilities scopesWithArray:scopes]
                                                  redirectURL:[NSURL URLWithString:redirectUrl]
