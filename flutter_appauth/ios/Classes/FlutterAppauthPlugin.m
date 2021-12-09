@@ -199,7 +199,7 @@ NSString *const END_SESSION_ERROR_MESSAGE_FORMAT = @"Failed to end session: %@";
                                                        scope:[OIDScopeUtilities scopesWithArray:scopes]
                                                  redirectURL:[NSURL URLWithString:redirectUrl]
                                                 responseType:OIDResponseTypeCode
-                                                    state:[[OIDAuthorizationRequest alloc:generateState]
+                                                    state:[[OIDAuthorizationRequest generateState]
                                                     nonce:nonce
                                                 codeVerifier:nil
                                             codeChallenge:nil
