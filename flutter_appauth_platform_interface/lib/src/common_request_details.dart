@@ -18,4 +18,6 @@ class CommonRequestDetails
   ///
   /// This property is only applicable to Android.
   bool? allowInsecureConnections;
+
+  String? nonce;
 }
