@@ -32,11 +32,11 @@ class AuthorizationTokenRequest extends TokenRequest
           serviceConfiguration: serviceConfiguration,
           additionalParameters: additionalParameters,
           allowInsecureConnections: allowInsecureConnections,
-          nonce: nonce,
         ) {
     this.loginHint = loginHint;
     this.promptValues = promptValues;
     this.preferEphemeralSession = preferEphemeralSession;
     this.responseMode = responseMode;
+    this.nonce = nonce;
   }
 }
