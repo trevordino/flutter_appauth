@@ -236,6 +236,7 @@ public class FlutterAppauthPlugin implements FlutterPlugin, MethodCallHandler, P
         allowInsecureConnections = (boolean) arguments.get("allowInsecureConnections");
         String nonce = null;
         if (arguments.containsKey("nonce")) {
+            System.out.println("nonce: " + arguments.get("nonce"));
             nonce = (String) arguments.get("nonce");
         }
         return new TokenRequestParameters(clientId, issuer, discoveryUrl, scopes, redirectUrl, refreshToken, authorizationCode, codeVerifier, grantType, serviceConfigurationParameters, additionalParameters, nonce);
