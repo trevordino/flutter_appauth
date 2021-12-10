@@ -38,6 +38,7 @@ extension EndSessionRequestMapper on EndSessionRequest {
 
 extension AuthorizationRequestParameters on AuthorizationRequest {
   Map<String, Object?> toMap() {
+    print(_convertAuthorizationParametersToMap(this));
     return _convertAuthorizationParametersToMap(this)
       ..addAll(_convertCommonRequestDetailsToMap(this));
   }
