@@ -18,7 +18,6 @@ Map<String, Object?> _convertCommonRequestDetailsToMap(
     'serviceConfiguration': commonRequestDetails.serviceConfiguration?.toMap(),
     'additionalParameters': commonRequestDetails.additionalParameters,
     'allowInsecureConnections': commonRequestDetails.allowInsecureConnections,
-    'nonce': commonRequestDetails.nonce,
   };
 }
 
@@ -100,5 +99,6 @@ Map<String, Object?> _convertAuthorizationParametersToMap(
     'promptValues': authorizationParameters.promptValues,
     'preferEphemeralSession': authorizationParameters.preferEphemeralSession,
     'responseMode': authorizationParameters.responseMode,
+    'nonce': authorizationParameters.nonce,
   };
 }
