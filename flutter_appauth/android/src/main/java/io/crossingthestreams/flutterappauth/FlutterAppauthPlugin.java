@@ -235,8 +235,8 @@ public class FlutterAppauthPlugin implements FlutterPlugin, MethodCallHandler, P
         final Map<String, String> additionalParameters = (Map<String, String>) arguments.get("additionalParameters");
         allowInsecureConnections = (boolean) arguments.get("allowInsecureConnections");
         String nonce = null;
+        System.out.println("API nonce: " + arguments.get("nonce"));
         if (arguments.containsKey("nonce")) {
-            System.out.println("nonce: " + arguments.get("nonce"));
             nonce = (String) arguments.get("nonce");
         }
         return new TokenRequestParameters(clientId, issuer, discoveryUrl, scopes, redirectUrl, refreshToken, authorizationCode, codeVerifier, grantType, serviceConfigurationParameters, additionalParameters, nonce);
@@ -334,6 +334,7 @@ public class FlutterAppauthPlugin implements FlutterPlugin, MethodCallHandler, P
 
         if (nonce != null) {
             authRequestBuilder.setNonce(nonce);
+            System.out.println("nonce: " + nonce);
         }
 
         if (additionalParameters != null && !additionalParameters.isEmpty()) {
