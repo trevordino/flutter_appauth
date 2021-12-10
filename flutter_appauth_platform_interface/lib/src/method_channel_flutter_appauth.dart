@@ -31,6 +31,8 @@ class MethodChannelFlutterAppAuth extends FlutterAppAuthPlatform {
   @override
   Future<AuthorizationTokenResponse?> authorizeAndExchangeCode(
       AuthorizationTokenRequest request) async {
+    print('requestToMap');
+    print(request.toMap());
     final Map<dynamic, dynamic>? result = await _channel.invokeMethod(
         'authorizeAndExchangeCode', request.toMap());
     if (result == null) {
