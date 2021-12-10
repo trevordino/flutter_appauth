@@ -18,6 +18,7 @@ Map<String, Object?> _convertCommonRequestDetailsToMap(
     'serviceConfiguration': commonRequestDetails.serviceConfiguration?.toMap(),
     'additionalParameters': commonRequestDetails.additionalParameters,
     'allowInsecureConnections': commonRequestDetails.allowInsecureConnections,
+    'nonce': commonRequestDetails.nonce,
   };
 }
 
@@ -74,7 +75,6 @@ Map<String, Object?> _convertTokenRequestToMap(TokenRequest tokenRequest) {
     'authorizationCode': tokenRequest.authorizationCode,
     'grantType': _inferGrantType(tokenRequest),
     'codeVerifier': tokenRequest.codeVerifier,
-    'nonce': tokenRequest.nonce,
   }..addAll(_convertCommonRequestDetailsToMap(tokenRequest));
 }
 
