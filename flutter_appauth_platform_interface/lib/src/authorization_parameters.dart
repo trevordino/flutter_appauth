@@ -11,4 +11,6 @@ mixin AuthorizationParameters {
   bool? preferEphemeralSession;
 
   String? responseMode;
+
+  String? nonce;
 }

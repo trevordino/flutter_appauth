@@ -99,5 +99,6 @@ Map<String, Object?> _convertAuthorizationParametersToMap(
     'promptValues': authorizationParameters.promptValues,
     'preferEphemeralSession': authorizationParameters.preferEphemeralSession,
     'responseMode': authorizationParameters.responseMode,
+    'nonce': authorizationParameters.nonce,
   };
 }
